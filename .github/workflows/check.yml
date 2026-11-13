@@ -1,0 +1,20 @@
+# The site built as GitHub Pages builds it (actions/jekyll-build-pages, the github-pages
+# gem), then the legal pages checked against the Owner's files (tools/check_legal.py).
+name: check
+on:
+  pull_request:
+  push:
+    branches: [main]
+permissions:
+  contents: read
+jobs:
+  legal-pages:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - uses: actions/jekyll-build-pages@44a6e6beabd48582f863aeeb6cb2151cc1716697 # v1.0.13
+        with:
+          source: ./
+          destination: ./_site
+      - run: python3 tools/check_legal.py _site

@@ -1,0 +1,12 @@
+# SHA-256 of each published legal page and the Owner's file it was copied from
+# (.owner-inbox/2026-11-13/legal, Owner-approved 2026-11-13); tools/check_legal.py checks
+25c1087e55cb01b93c8e2965dda233e63fc6a5798efc0ecdb615562962fa1c87  privacy/index.md  privacy.en.md
+e8e67e73bb32d3a79847738c6f23b53647778eaa5492637ab83d44a6c741bde9  he/privacy/index.md  privacy.he.md
+47519f75ab562bf352100fc06e7846bbc5f0d997c9c831c9ec94165a46010ff0  terms/index.md  terms.en.md
+6b6f0c466861cad3ffdfb1ee8dabf296f2a537339786e752a15545f0fc55ed6e  he/terms/index.md  terms.he.md
+0c38de150579835e594660f83df6af997b60e48203e15b3f423bd9987fc53b05  data-deletion/index.md  data-deletion.en.md
+c7c371bc50a7b94f00425121692790738988404826e5b78ee917133b5458f304  he/data-deletion/index.md  data-deletion.he.md
+93b231fbaed01850a141a9845d773ca66e59bc168dbe1ddd8740e404bddb8773  dpa/index.md  dpa.en.md
+651119b1ec023bc3f450e51adb6859f44d7aa5eb15de033660372794fa08f082  he/dpa/index.md  dpa.he.md
+5d618a0c4e4e8aa800b3b961307676ae869d6b25984f89ce38ef063bc888f096  subprocessors/index.md  subprocessors.en.md
+4e6c5cb5f6ca1a0f6cfe639c3480a86e25e62a42d7eab052580bed13c70a42f4  he/subprocessors/index.md  subprocessors.he.md
