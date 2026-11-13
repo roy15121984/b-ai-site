@@ -2,8 +2,6 @@
 
 **Last updated:** 13 November 2026
 
-> Draft for review by the Owner. Not legal advice.
-
 ## 1. Who this addendum is between, and what it covers
 
 This Data Processing Addendum ("**DPA**") is between:

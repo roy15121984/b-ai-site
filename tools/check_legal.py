@@ -2,8 +2,9 @@
 
     python3 tools/check_legal.py _site [OWNERS_FOLDER]
 
-1. Each page's Markdown is byte for byte the Owner's file it names (tools/legal.sha256);
-   with OWNERS_FOLDER, the Owner's files themselves are checked against the same sums.
+1. Each page's Markdown has the sum tools/legal.sha256 gives it. With OWNERS_FOLDER, each
+   page is the Owner's file it names byte for byte, less the one line the Owner had
+   removed (2026-11-13): the draft notice and the blank line after it.
 2. The built page shows its text as written: every line of the Markdown, its markup taken
    off, appears in the page's visible text unchanged (no curly quotes, no typographic
    dashes), and its headings are built as headings (nothing left unparsed).
@@ -22,6 +23,20 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ("privacy", "terms", "data-deletion", "dpa", "subprocessors")
 PAGES = [f"{prefix}{doc}/" for doc in DOCS for prefix in ("", "he/")]
+# The Owner's decision (2026-11-13): the draft notice removed from each page, nothing else
+NOTICES = (
+    "> Draft for review by the Owner. Not legal advice.".encode(),
+    "> טיוטה לבדיקת הבעלים. אין לראות בה ייעוץ משפטי.".encode(),
+)
+
+
+def published_from(original: bytes) -> bytes:
+    """The Owner's file less its draft notice line and the blank line after it."""
+    lines = original.split(b"\n")
+    at = [i for i, line in enumerate(lines) if line in NOTICES]
+    if len(at) != 1 or lines[at[0] + 1] != b"":
+        raise ValueError("not one draft notice followed by a blank line")
+    return b"\n".join(lines[: at[0]] + lines[at[0] + 2 :])
 
 
 class _Text(HTMLParser):
@@ -82,12 +97,18 @@ def main(site: Path, owners: Path | None) -> list[str]:
         for line in (ROOT / "tools" / "legal.sha256").read_text(encoding="utf-8").splitlines()
         if line.strip() and not line.startswith("#")
     ]
-    assert sorted(path for _, path, _ in sums) == sorted(f"{p}index.md" for p in PAGES), sums
-    for digest, path, original in sums:
-        if hashlib.sha256((ROOT / path).read_bytes()).hexdigest() != digest:
-            problems.append(f"{path}: not byte for byte the Owner's {original}")
-        if owners is not None and hashlib.sha256((owners / original).read_bytes()).hexdigest() != digest:
-            problems.append(f"{original}: the Owner's file differs from the published sum")
+    assert sorted(row[1] for row in sums) == sorted(f"{p}index.md" for p in PAGES), sums
+    for digest, path, original, original_digest in sums:
+        page = (ROOT / path).read_bytes()
+        if hashlib.sha256(page).hexdigest() != digest:
+            problems.append(f"{path}: not the published sum")
+        if owners is None:
+            continue
+        theirs = (owners / original).read_bytes()
+        if hashlib.sha256(theirs).hexdigest() != original_digest:
+            problems.append(f"{original}: the Owner's file differs from its recorded sum")
+        if page != published_from(theirs):
+            problems.append(f"{path}: not the Owner's {original} less the draft notice")
     links = [f'href="/{page}"' for page in PAGES]
     home = (site / "index.html").read_text(encoding="utf-8")
     problems += [f"index.html: no link {link}" for link in links if link not in home]

@@ -2,8 +2,6 @@
 
 **Last updated:** 13 November 2026
 
-> Draft for review by the Owner. Not legal advice.
-
 ## 1. Who we are
 
 B-AI is a trade name of **D.S Spring Equity Ltd**, a company registered in Israel ("B-AI", "we", "us").

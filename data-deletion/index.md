@@ -2,8 +2,6 @@
 
 **Last updated:** 13 November 2026
 
-> Draft for review by the Owner. Not legal advice.
-
 This page explains how to have your data deleted from B-AI. B-AI is a trade name of D.S Spring Equity Ltd (Israel).
 
 Contact for all deletion requests: **roy@b-ai-app.com**

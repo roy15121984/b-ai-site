@@ -2,8 +2,6 @@
 
 **Last updated:** 13 November 2026
 
-> Draft for review by the Owner. Not legal advice.
-
 B-AI is a trade name of D.S Spring Equity Ltd (Israel). This page lists the third parties that process personal data for B-AI. It forms part of our Data Processing Addendum (https://b-ai-app.com/dpa/).
 
 We email workspace owners **at least 30 days** before a new sub-processor starts processing Customer data. Customers may object during that period, as the DPA explains.

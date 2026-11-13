@@ -1,4 +1,5 @@
-# The legal pages are the Owner's files byte for byte (CRLF included): no conversion
+# The legal pages are the Owner's files byte for byte (tools/legal.sha256): git converts
+# none of their line endings
 privacy/index.md -text
 terms/index.md -text
 data-deletion/index.md -text
