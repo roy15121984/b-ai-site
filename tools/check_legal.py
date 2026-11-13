@@ -6,7 +6,7 @@
    with OWNERS_FOLDER, the Owner's files themselves are checked against the same sums.
 2. The built page shows its text as written: every line of the Markdown, its markup taken
    off, appears in the page's visible text unchanged (no curly quotes, no typographic
-   dashes, nothing left unparsed).
+   dashes), and its headings are built as headings (nothing left unparsed).
 3. The Hebrew pages are right to left (<html lang="he" dir="rtl">), the English left to right.
 4. Every legal page and the home page link to all ten pages.
 """
@@ -28,6 +28,8 @@ class _Text(HTMLParser):
     """The visible text of a page (entities resolved; style, script and title left out)."""
 
     HIDDEN = ("style", "script", "title")
+    # inline elements join the text around them; every other tag separates it
+    INLINE = ("a", "abbr", "b", "code", "em", "i", "span", "strong", "sub", "sup")
 
     def __init__(self) -> None:
         super().__init__()
@@ -36,11 +38,13 @@ class _Text(HTMLParser):
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         self.hidden += tag in self.HIDDEN
-        self.parts.append(" ")
+        if tag not in self.INLINE:
+            self.parts.append(" ")
 
     def handle_endtag(self, tag: str) -> None:
         self.hidden -= tag in self.HIDDEN
-        self.parts.append(" ")
+        if tag not in self.INLINE:
+            self.parts.append(" ")
 
     def handle_data(self, data: str) -> None:
         if not self.hidden:
@@ -96,6 +100,12 @@ def main(site: Path, owners: Path | None) -> list[str]:
         problems += [f"{page}: no link {link}" for link in links if link not in built]
         shown = visible(built)
         source = (ROOT / page / "index.md").read_text(encoding="utf-8")
+        for level in (1, 2, 3):  # the Markdown parsed, inside the Hebrew <div> too
+            written = sum(line.startswith("#" * level + " ") for line in source.splitlines())
+            if built.count(f"<h{level}") != written:
+                problems.append(f"{page}: {written} level-{level} headings, {built.count(f'<h{level}')} built")
+        if "**" in shown:
+            problems.append(f"{page}: Markdown left unparsed (**)")
         for number, line in enumerate(source.splitlines(), start=1):
             for text in plain(line):
                 if text not in shown:
