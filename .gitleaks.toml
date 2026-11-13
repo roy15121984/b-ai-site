@@ -1,0 +1,3 @@
+# gitleaks: its default rules (the secret scan before every push reads this file)
+[extend]
+useDefault = true

@@ -1,0 +1,34 @@
+# The legal pages (2026-11-13). Each page is the Owner's Markdown file byte for byte
+# (tools/legal.sha256); this file and _layouts/legal.html give it its frame, so the files
+# carry no front matter of their own. The home page (index.html) is a static file.
+title: B-AI
+exclude: [tools, README.md]
+kramdown:
+  input: GFM
+  # the Hebrew files wrap their text in <div dir="rtl" lang="he">: its Markdown is parsed
+  parse_block_html: true
+  # the text as written: no curly quotes (בע"מ stays as typed) and no typographic dashes
+  smart_quotes: ["apos", "apos", "quot", "quot"]
+  typographic_symbols: {hellip: "...", mdash: "---", ndash: "--", laquo: "<<", raquo: ">>", laquo_space: "<< ", raquo_space: " >>"}
+# ("direction", not "dir": Jekyll's page.dir is the page's folder)
+defaults:
+  - scope: {path: "privacy"}
+    values: {layout: legal, lang: en, direction: ltr, title: "B-AI Privacy Policy"}
+  - scope: {path: "he/privacy"}
+    values: {layout: legal, lang: he, direction: rtl, title: "מדיניות הפרטיות של B-AI"}
+  - scope: {path: "terms"}
+    values: {layout: legal, lang: en, direction: ltr, title: "B-AI Terms of Service"}
+  - scope: {path: "he/terms"}
+    values: {layout: legal, lang: he, direction: rtl, title: "תנאי השימוש של B-AI"}
+  - scope: {path: "data-deletion"}
+    values: {layout: legal, lang: en, direction: ltr, title: "B-AI Data Deletion Instructions"}
+  - scope: {path: "he/data-deletion"}
+    values: {layout: legal, lang: he, direction: rtl, title: "הוראות למחיקת מידע ב-B-AI"}
+  - scope: {path: "dpa"}
+    values: {layout: legal, lang: en, direction: ltr, title: "B-AI Data Processing Addendum"}
+  - scope: {path: "he/dpa"}
+    values: {layout: legal, lang: he, direction: rtl, title: "נספח עיבוד מידע (DPA) של B-AI"}
+  - scope: {path: "subprocessors"}
+    values: {layout: legal, lang: en, direction: ltr, title: "B-AI Sub-processors"}
+  - scope: {path: "he/subprocessors"}
+    values: {layout: legal, lang: he, direction: rtl, title: "מעבדי המשנה של B-AI"}

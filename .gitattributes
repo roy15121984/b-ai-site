@@ -1,0 +1,8 @@
+# The legal pages are the Owner's files byte for byte (tools/legal.sha256): git converts
+# none of their line endings
+privacy/index.md -text
+terms/index.md -text
+data-deletion/index.md -text
+dpa/index.md -text
+subprocessors/index.md -text
+he/**/index.md -text
