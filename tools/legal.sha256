@@ -2,10 +2,10 @@
 # (.owner-inbox/2026-11-13/legal, Owner-approved 2026-11-13) and that file's SHA-256.
 # A page is the Owner's file byte for byte, less one line by the Owner's decision of
 # 2026-11-13: the draft notice and the blank line after it (tools/check_legal.py).
-47badb3e7b6866b60ceb6a25020bf5d0ec0f168c6b74c2bbdd2b1921ce031afa  privacy/index.md  privacy.en.md  25c1087e55cb01b93c8e2965dda233e63fc6a5798efc0ecdb615562962fa1c87
-6e428569b1638019be8cdd363ca11b3964bf9a889cc3b423474e16908b6b6f82  he/privacy/index.md  privacy.he.md  e8e67e73bb32d3a79847738c6f23b53647778eaa5492637ab83d44a6c741bde9
-04766d99ed288284ba21d9085203eedfba6f51d7b884ee44bda3bb83c09e1b3a  terms/index.md  terms.en.md  47519f75ab562bf352100fc06e7846bbc5f0d997c9c831c9ec94165a46010ff0
-659bd506c630dd78d0cc3bbc6520903ca6427e87d6833185a703e5483859f17b  he/terms/index.md  terms.he.md  6b6f0c466861cad3ffdfb1ee8dabf296f2a537339786e752a15545f0fc55ed6e
+ec8351d2c983cf145a76d459fb22f8098b2c92e0e504c71686bf1c71974ce42d  privacy/index.md  privacy.en.md  faf2cfe4c39947f4cbaf537129edc1df7e4427b68c9dae71e4e389e6354abf3c
+e0800859363e12c2e87caf5e7d5bb7d5203015c60927bdb31f8ae0f755e3f55e  he/privacy/index.md  privacy.he.md  1db109e9bcf94eefc1536d074d7f8a829cf2a7e06695d452a93698af68386360
+0b36e5548bf4a4b3081ff1605649b1dc2f68b8b1329a4dd284643f29a4937774  terms/index.md  terms.en.md  4d5a89c7ce0f216ab6ced6d88ab448168be3576341fdb729ba8084dd9e2d9150
+ab4543ce329fa9ffd7009b568ccb7cea8e11095994c43905d6bb714ea8744ecc  he/terms/index.md  terms.he.md  bc700edc5c63111940375c0af1bb3fe2273fb8a7a4d65f156add3e878df6499e
 ff71e3410971ef66f50981e22f76456df644cdc9032e4ba3140cff941971c06d  data-deletion/index.md  data-deletion.en.md  0c38de150579835e594660f83df6af997b60e48203e15b3f423bd9987fc53b05
 5f29b0cd31598fb435ae770876a1bf3f0c476fdd53e2a439b305f7c25e4df6bd  he/data-deletion/index.md  data-deletion.he.md  c7c371bc50a7b94f00425121692790738988404826e5b78ee917133b5458f304
 cbe2652e013d55369c159fd48802b638e6bc5ed1c233581f5d48cb1a8282ced9  dpa/index.md  dpa.en.md  93b231fbaed01850a141a9845d773ca66e59bc168dbe1ddd8740e404bddb8773

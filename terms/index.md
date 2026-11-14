@@ -27,7 +27,7 @@ The Service is currently in **beta**.
 - The Service is provided **"as is" and "as available"**.
 - Features may change, be added or be removed at any time.
 - There is **no service level agreement (SLA)** during the beta.
-- The Service is free during the beta. When paid plans start, fees will be The Service is free of charge during the beta. If paid plans are introduced, we will give at least 30 days' notice, and no charge will apply without your agreement.. We will tell you before any fee applies, and you can choose whether to continue.
+- The Service is free of charge during the beta. If paid plans are introduced, we will give at least 30 days' notice, no charge will apply without your agreement, and you can choose whether to continue.
 
 ## 4. Your account
 

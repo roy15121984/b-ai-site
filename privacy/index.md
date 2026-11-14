@@ -80,7 +80,7 @@ We use a small number of service providers. They may only use the data to provid
 | Our own business email | Google Workspace | United States and other countries where Google has data centres | Emails you send us and our replies |
 | Payments | None yet (the Service is free during the beta); we will add one here before paid plans start | — | — |
 
-An up-to-date list is at https://b-ai-app.com/subprocessors/. by e-mail to workspace owners at least 30 days before a new sub-processor starts processing Customer data
+An up-to-date list is at https://b-ai-app.com/subprocessors/. We will tell workspace owners by e-mail at least 30 days before a new sub-processor starts processing Customer data.
 
 **Integrations the Customer turns on.** A Customer can connect optional integrations, such as Meta lead ads (Facebook/Instagram), Google, WhatsApp or email. When a Customer turns one on, data flows between B-AI and that service on the Customer's instruction. That service handles the data under its own terms and privacy policy.
 
